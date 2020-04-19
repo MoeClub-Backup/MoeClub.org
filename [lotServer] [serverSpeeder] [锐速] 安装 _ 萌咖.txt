@@ -1,0 +1,50 @@
+[lotServer] [serverSpeeder] [锐速] 安装
+博主： Haibara
+ 发布时间：2017 年 03 月 09 日
+ 12272 次浏览
+  119 条评论
+ 1961 字数
+分类： Technology
+
+正文  
+ 
+
+Update: 2019.04.15
+* 支持更高版本的内核.
+-----
+说明:
+
+支持一键完全卸载(此脚本安装的无残留).
+所需文件均在GitHub,完全公开..
+不支持自动更换内核,请自行更换.
+Debian/Ubuntu用户可以使用下面提供的脚本自动更换到适配的内核.
+CentOS可自行搜索教程进行更换.
+不支持OpenVZ虚拟化.
+请查看文章最后调教手册,调教后效果更好.
+除此脚本外,所有内容均来自互联网.
+本人不负任何法律责任,仅供学习使用.
+-----
+
+CentOS如有安装困难可参照: CentOS不换内核安装锐速.
+GitHub项目地址: https://github.com/MoeClub/lotServer/
+官方更新日志: http://download.appexnetworks.com.cn/releaseNotes/
+Install:
+bash <(wget --no-check-certificate -qO- https://github.com/MoeClub/lotServer/raw/master/Install.sh) install
+Uninstall:
+bash <(wget --no-check-certificate -qO- https://github.com/MoeClub/lotServer/raw/master/Install.sh) uninstall
+Advance Install:
+bash <(wget --no-check-certificate -qO- https://github.com/MoeClub/lotServer/raw/master/Install.sh) install [Kernel Version]
+Debian/Unbuntu 更换自动内核 (运行后需重启):
+bash <(wget --no-check-certificate -qO- 'https://moeclub.org/attachment/LinuxShell/Debian_Kernel.sh')
+调教手册: https://github.com/MoeClub/lotServer/blob/master/lotServer.pdf
+-----
+使用方法:
+启动命令 /appex/bin/lotServer.sh start
+停止加速 /appex/bin/lotServer.sh stop
+状态查询 /appex/bin/lotServer.sh status
+重新启动 /appex/bin/lotServer.sh restart
+
+ 
+
+最后修改：2019 年 05 月 13 日 03 : 28 PM
+© 著作权归作者所有

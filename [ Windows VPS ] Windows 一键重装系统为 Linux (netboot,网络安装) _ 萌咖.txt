@@ -1,0 +1,63 @@
+[ Windows VPS ] Windows 一键重装系统为 Linux (netboot,网络安装)
+博主： Haibara
+ 发布时间：2018 年 10 月 31 日
+ 10095 次浏览
+  29 条评论
+ 2761 字数
+分类： Technology Windows
+
+正文  
+ 
+
+有些厂商的机器因策略问题,不支持Windows重装为Linux. 例如: 腾讯云非大陆区域.
+有些厂商Windows系统盘会比Linux系统盘大,想要大一点系统盘. 例如: AZURE, AWS等.
+有些厂商不支持VNC,这对于转换系统实在不方便.
+这篇文章可以解决以上问题.
+Windows to Linux!
+
+使用前,请耐心看完文章.
+如果造成损失,萌咖不负任何责任.
+
+更新日志
+2018.11.12
+1.内置了我博客中提供的两个Windows镜像的选项,仅DHCP可用(谷歌网盘,境外机器使用). 2.修复了SHA1 校验失败的问题. 3.兼容了较低版本 PowerShell.
+2018.11.02
+增加 SHA1 文件校验, 避免下载中意外出错.
+使用方法:
+下载 win32loader.bat .
+双击打开此文件.
+自行选择选项.
+按回车重启,并等待安装完成.
+win32loder
+注意事项:
+如果对提供安装的发行版不满意,请参考此文章.
+[ Linux VPS ]
+Debian/Ubuntu/CentOS 网络安装/重装系统/纯净安装 一键脚本
+默认提供的是Debian8(Jessie),添加了firmware包,提供了更多的驱动支持,DHCP模式一键.
+非DHCP模式,如果要一键,则需要自己定制镜像.
+定制Debian系镜像应该没问题,其他未作测试.
+默认root账户密码 MoeClub.org .
+如需要Linux一键重装为Windows,请参考此文章.
+[ Linux VPS ] Debian/Ubuntu/CentOS 网络安装/重装系统/纯净安装 一键脚本
+如果厂商不支持VNC,则需要自己定制镜像.
+定制方法参考上面提到的文章
+[ Linux VPS ] Debian/Ubuntu/CentOS 网络安装/重装系统/纯净安装 一键脚本
+主要在镜像中添加机器的网络参数,以便支持一键安装.
+命令示例:
+
+# 定制带网络参数的initrd.img
+bash InstallNET.sh -d 8 -v 64 -a --ip-addr  --ip-mask  --ip-gate  --loader
+# 需要dd安装其他系统(例如 Windows to Windows),定制命令.(网络参数有DHCP的,无需添加.)
+bash InstallNET.sh -dd  --ip-addr  --ip-mask  --ip-gate  --loader
+完成后将 initrd.img 和 vmlinuz 存放到能直链下载的位置.
+如果厂商支持VNC,则可以直选全部选 1 .
+安装的时候,自己填 IP地址，子网掩码, 网关, DNS服务器. DNS服务器推荐填: 8.8.8.8
+区分是否为DHCP模式
+DHCP
+非DHCP模式: 如上图,显示了详细的IP地址.(选中:使用下面的IP地址)
+DHCP模式: 参考上图.(选中:自动获得IP地址)
+各种形式的转载请注明出处!
+ 
+
+最后修改：2019 年 11 月 14 日 03 : 33 PM
+© 著作权归作者所有
